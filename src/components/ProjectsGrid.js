@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
-import { Box, Card, CardContent, CardHeader, Typography, Grid, Link, CardActions, Button, CardActionArea, CardMedia, GridList } from '@material-ui/core';
+import { Box, Card, CardContent, CardHeader, Typography, Grid, Link, CardActions, Button, CardActionArea, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { projects } from '../helper';
 import { withNamespaces } from 'react-i18next';
+import i18n from '../internalization/i18n';
 
-export const ProjectsGrid = withNamespaces()(({ t }) => {
+export const ProjectsGrid = withNamespaces()(function(props){
+  const projects = props.projects;
   const classes = makeStyles({
     root: {
       flexGrow: 1
@@ -27,12 +28,11 @@ export const ProjectsGrid = withNamespaces()(({ t }) => {
               className={classes.media}
               image={project.media}
               title={project.name}
-            />
+              />
           </CardActionArea>
           <CardHeader title={project.name} />
           <CardContent className={classes.card}>
             {Description(project.description)}
-
           </CardContent>
           <CardActions>
             <GithubButton href={project.githubUrl} />
@@ -56,7 +56,7 @@ export const ProjectsGrid = withNamespaces()(({ t }) => {
     if (props.href === undefined) return null;
     return (
       <Link underline="none" target="_blank" href={props.href}>
-        <Button variant="outlined" color="primary">{t('projectsGrid.livePreviewButtonText')}</Button>
+        <Button variant="outlined" color="primary">{i18n.t('projectsGrid.livePreviewButtonText')}</Button>
       </Link>
     );
   }
@@ -86,7 +86,7 @@ export const ProjectsGrid = withNamespaces()(({ t }) => {
   return (
     <Box component="div" m={2} className={classes.root}>
       <Typography variant="h5" component="h1">
-        {t('projectsGrid.title')}
+        {i18n.t('projectsGrid.title')}
       </Typography>
       <Grid container spacing={2} alignItems="flex-end" style={{ marginTop: 1 }}>
         {projectItems}

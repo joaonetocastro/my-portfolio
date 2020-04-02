@@ -22,7 +22,7 @@ export default [
                     change the array size and in the end of the 
                     sorting it shows how time expensive doing that sort was.`,
     githubUrl: 'https://github.com/joaonetocastro/sorting-algorithms-with-vue',
-    livePreviewUrl: 'https://joaonetocastro.github.io/sorting-with-vue',
+    livePreviewUrl: 'https://joaonetocastro.github.io/sorting-algorithms-with-vue/',
     technologies: []
   },
   // {

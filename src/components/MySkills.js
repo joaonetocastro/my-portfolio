@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography} from '@material-ui/core';
-import {skills} from '../helper';
+import {skills} from '../services/SkillService';
 import {withNamespaces} from 'react-i18next';
 
 export const MySkills = withNamespaces()(({t}) =>{

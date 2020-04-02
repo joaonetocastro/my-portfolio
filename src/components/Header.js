@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import {AppBar, Toolbar, Select, MenuItem, Typography, Link, IconButton, ButtonGroup, Button} from '@material-ui/core';
+import {AppBar, Toolbar, Select, MenuItem, Typography, Link, IconButton} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {LinkedIn as LinkedInIcon, GitHub as GitHubIcon} from '@material-ui/icons';
 import i18n from '../internalization/i18n';
-console.log();
-export function Header(){
-  const initialLanguage = i18n.language.includes('-') ? i18n.language.split('-')[0] : i18n.language;
-  const [currentLang, setCurrentLang] = useState(initialLanguage);
+import {getCurrentLang} from '../utils';
+
+export function Header(props){
+  const [currentLang, setCurrentLang] = useState(getCurrentLang);
   const changeLanguage = (event) => {
     const newLanguage = event.target.value;
     i18n.changeLanguage(newLanguage);
     setCurrentLang(newLanguage);
+    props.onLanguageChange();
   }
   const classes = makeStyles({
     title: {
