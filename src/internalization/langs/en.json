@@ -1,0 +1,28 @@
+{
+  "projectsGrid": {
+    "title": "My Projects",
+    "livePreviewButtonText": "Live Preview"
+  },
+  "mySkills": {
+    "title": "My skills"
+  },
+  "aboutMe": {
+    "title": "About me",
+    "description": "Hi! i'm João Neto Castro, a passionate programmer. My main goal is to give value to the world, and i can help you make your dream app/website become a reality."
+  },
+  "downloadMyCV": {
+    "title": "Download my CV here",
+    "buttonText": "Download Curriculum"
+  },
+  "letsWorkTogether": {
+    "title": "Let's work together?",
+    "buttonText": "Send email",
+    "successMessage": "Your message has been sent",
+    "formPlaceholders": {
+      "name": "Your Name",
+      "companyName": "Your company name",
+      "contactEmail": "Your email",
+      "message": "Your message" 
+    }
+  }
+}
